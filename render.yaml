@@ -28,11 +28,23 @@ services:
       # Do not modify this value after it's generated!
       # If you do, you'll lose access to all credentials
       # encrypted with the previous value.
+     
+      # Generates a base64-encoded key for
+      # encrypting credentials in n8n
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
-
-      # These automatically populate connection details 
-      # for the Render Postgres database defined below
+      
+      # ADD THESE WEBHOOK CONFIGURATION VARIABLES:
+      - key: WEBHOOK_URL
+        value: https://n8n-service.onrender.com/
+      - key: N8N_HOST
+        value: n8n-service.onrender.com
+      - key: N8N_PROTOCOL
+        value: https
+      - key: N8N_PORT
+        value: 443
+      
+      # Database configuration (keep existing)
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_DATABASE
@@ -51,7 +63,10 @@ services:
         fromDatabase:
           name: n8n-db
           property: user
+      - key: N8N_ENCRYPTION_KEY
+        generateValue: true
 
+     
 databases:
   - name: n8n-db
     plan: free
