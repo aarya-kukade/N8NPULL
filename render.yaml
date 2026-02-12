@@ -13,10 +13,10 @@ services:
     # This is the runtime for services that pull a prebuilt Docker image
     runtime: image
     # You can give the service any name
-    name: n8n-service
+    name: n8n-service1
     image:
       # Pulls the n8n image tagged as latest from Docker Hub
-      url: docker.io/n8nio/n8n:latest
+      url: docker.io/n8nio1/n8n:latest
 
     # All environment variables defined below are required!
     #
@@ -36,9 +36,9 @@ services:
       
       # ADD THESE WEBHOOK CONFIGURATION VARIABLES:
       - key: WEBHOOK_URL
-        value: https://n8n-service.onrender.com/
+        value: https://n8n-service1.onrender.com/
       - key: N8N_HOST
-        value: n8n-service.onrender.com
+        value: n8n-service1.onrender.com
       - key: N8N_PROTOCOL
         value: https
       - key: N8N_PORT
