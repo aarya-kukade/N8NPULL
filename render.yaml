@@ -31,8 +31,7 @@ services:
      
       # Generates a base64-encoded key for
       # encrypting credentials in n8n
-      - key: N8N_ENCRYPTION_KEY
-        generateValue: true
+      
       
       # ADD THESE WEBHOOK CONFIGURATION VARIABLES:
       - key: WEBHOOK_URL
@@ -42,7 +41,7 @@ services:
       - key: N8N_PROTOCOL
         value: https
       - key: N8N_PORT
-        value: 443
+        value: 5678
       
       # Database configuration (keep existing)
       - key: DB_TYPE
